@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e272e;
+    font-family: 'Teko', sans-serif;
+}
+.text {
+    width: 55%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    color: #d2dae2;
+    font-size: x-large;
+}
+.user-input {
+    width: 15%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+.result {
+    width: 16%;
+    height: auto;
+    margin: auto;
+    font-size: 50px;
+    text-align: center;
+}
+#height, #weight {
+    border-radius: 10px;
+}
+#button {
+    border-radius: 5px;
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var height = document.getElementById("height");
+    var weight = document.getElementById("weight");
+    var button = document.getElementById("button");
+    var result = document.getElementById("resultado");
+
+    const Bmi = () => {
+        let bodyMass = weight.value / (height.value * height.value);
+
+        if (bodyMass < 18.5) {
+            return bodyMass.toFixed(1) + " " + "You are underweight...";
+        } else if (bodyMass.toFixed(1) >= 18.5 && bodyMass.toFixed(1) <= 24.9) {
+            return bodyMass.toFixed(1) + " " + "You have a healty weight!";
+        } else if (bodyMass.toFixed(1) >= 25.0 && bodyMass.toFixed(1) <= 29.9) {
+            return bodyMass.toFixed(1) + " " + "You are overweight";
+        } else if (bodyMass.toFixed(1) > 30.0) {
+            return bodyMass.toFixed(1) + " " + "You are obese";
+        } else {
+            return "Try again";
+        }
+
+        return bodyMass.toFixed(1);
+    }
+
+    button.addEventListener('click', function() {
+      result.innerHTML = Bmi();
+    })
+
+});
+
+    </script>
+    <title>Body Mass Index Calculator</title>
+</head>
+<body>
+    <div class="text">
+        <h1>Hello! This is a simple calculator that will, obviously, calculate your body mass index (or bmi), just simply fill the spaces below and see if you are healthy, underweight or overweight</h1>
+    </div>
+    <div class="user-input">
+        <input id="height" type="number" placeholder="height (meters)">
+        <input id="weight" type="number" placeholder="weight (kilograms)">
+        <button id="button">Calculate</button>
+    </div>
+    <div class="result">
+        <p id="resultado"></p>
+    </div>
+</body>
+</html>
