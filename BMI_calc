@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
     <style>
-      body {
+body {
     margin: 0;
     padding: 0;
     background-color: #1e272e;
@@ -33,13 +33,44 @@
     margin: auto;
     font-size: 50px;
     text-align: center;
+    color: #d2dae2;
 }
-#height, #weight {
+#height, #weight, ::placeholder {
     border-radius: 10px;
+    background-color: #808e9b;
+    color: #252525;
+    font-size: smaller;
 }
 #button {
     border-radius: 5px;
+    background-color: #05c46b;
+    color: #d2dae2;
 }
+@media (max-width: 768px) {
+    .text {
+        width: 75%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+        color: #d2dae2;
+        font-size: small;
+    }
+    .user-input {
+        width: 55%;
+        height: auto;
+        margin: auto;
+        text-align: center;
+}
+    .result {
+        width: 55%;
+        height: auto;
+        margin: auto;
+        font-size: 40px;
+        text-align: center;
+        color: #d2dae2;
+    }
+}
+
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -80,7 +111,7 @@
         <h1>Hello! This is a simple calculator that will, obviously, calculate your body mass index (or bmi), just simply fill the spaces below and see if you are healthy, underweight or overweight</h1>
     </div>
     <div class="user-input">
-        <input id="height" type="number" placeholder="height (meters)">
+        <input id="height" type="number" placeholder="height (meters. Ex: 1.75, 1.8)">
         <input id="weight" type="number" placeholder="weight (kilograms)">
         <button id="button">Calculate</button>
     </div>
